@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧港航——基于多源数据的船舶入港管理系统</title>
+    <link rel="shortcut icon" href="./data/imgs/logo.ico" />
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/flexible.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://api.map.baidu.com/api?ak=WEKSeRPHGGyNfOS4NLbc3cBD6f1YaqMU&services=true"></script>
+    <script src="http://mapv.baidu.com/build/mapv.min.js"></script>
+    <script src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
+</head>
+
+<body>
+    <!-- 导航栏模块 -->
+    <div class="nav">
+        <!-- 标题部分 -->
+        <div class="title">
+            <img src="./data/imgs/logo.png" alt="logo" class="logo">
+            <div class="name">
+                <li class="first_item">智慧港航</li>
+                <li class="second_">基于多源数据的港口水域监管系统</li>
+            </div>
+        </div>
+        <!-- 功能部分 -->
+        <div class="function_item">
+            <li><a href="#">航道监测</a></li>
+            <li>
+                <a href="#">拖船监管</a>
+                <ul>
+                    <li><a href="#">拖船查询</a></li>
+                    <li><a href="#">信息展示</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">锚地管理</a>
+                <ul>
+                    <li><a href="#">走锚判断</a></li>
+                    <li><a href="#">信息展示</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">泊位作业</a>
+                <ul>
+                    <li><a href="#">作业动态</a></li>
+                    <li><a href="#">装卸效率</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">关于我们</a>
+                <ul>
+                    <li><a href=""></a></li>
+                </ul>
+            </li>
+        </div>
+        <!-- 登录部分 -->
+        <div class="login">
+            <img src="./data/imgs/登录.png" alt="">
+            <div class="log_in">登录</div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="show_video">
+            <video src="../715f0e300ead5917a96725ee519b35aa/1.mp4" autoplay loop muted></video>
+        </div>
+        <div id="info">
+            <div class="video">
+                <li class="rugang">
+                    <span>入港口</span>
+                    <div class="more">更多</div>
+                </li>
+                <li id="sec_li">
+                    <span>锚地</span>
+                    <div class="more">更多</div>
+                </li>
+                <li class="working">
+                    <span>作业</span>
+                    <div class="more">更多</div>
+                </li>
+            </div>
+            <div class="message">
+                <li>
+                    <h2>船舶信息</h2>
+                    <table>
+                        <tr>
+                            <th>船名:</th>
+                            <td>安通27</td>
+                            <th>MMSI:</th>
+                            <td>413451530</td>
+                        </tr>
+                        <tr>
+                            <th>IMO:</th>
+                            <td>1400704</td>
+                            <th>呼号:</th>
+                            <td>BKRT6</td>
+                        </tr>
+                        <tr>
+                            <th>船长:</th>
+                            <td>96米</td>
+                            <th>船宽:</th>
+                            <td>15米</td>
+                        </tr>
+                        <tr>
+                            <th>经度:</th>
+                            <td>122.987E</td>
+                            <th>纬度:</th>
+                            <td>29.271N</td>
+                        </tr>
+                        <tr>
+                            <th>吃水:</th>
+                            <td>5米</td>
+                            <th>航速:</th>
+                            <td>9.3节</td>
+                        </tr>
+                        <tr>
+                            <th>船首向:</th>
+                            <td>49.0度</td>
+                            <th>航迹向:</th>
+                            <td>50.4度</td>
+                        </tr>
+                    </table>
+                </li>
+                <li class="sec">
+                    <h2>气象信息</h2>
+                    <h3>2021年5月27日 08点24分07秒</h3>
+                    <table>
+                        <tr>
+                            <th>风速:</th>
+                            <td>4.7米/秒</td>
+                            <th>风向:</th>
+                            <td>75度</td>
+                        </tr>
+                        <tr>
+                            <th>浪高:</th>
+                            <td>-</td>
+                            <th>涌高:</th>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <th>涌向:</th>
+                            <td>-</td>
+                            <th>涌周期:</th>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <th>温度:</th>
+                            <td>26摄氏度</td>
+                            <th>湿度:</th>
+                            <td>75%</td>
+                        </tr>
+                        <tr>
+                            <th>气压:</th>
+                            <td>1010hPa</td>
+                            <th>能见度:</th>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                </li>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- <script src="./js/main.js"></script> -->
+
+</html>

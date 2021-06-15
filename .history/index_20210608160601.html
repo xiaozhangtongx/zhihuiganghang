@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧港航——基于多源数据的船舶入港管理系统</title>
+    <link rel="shortcut icon" href="./data/imgs/logo.ico" />
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/flexible.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://api.map.baidu.com/api?ak=WEKSeRPHGGyNfOS4NLbc3cBD6f1YaqMU&services=true"></script>
+    <script src="http://mapv.baidu.com/build/mapv.min.js"></script>
+    <script src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
+</head>
+
+<body>
+    <!-- 导航栏模块 -->
+    <div class="nav">
+        <!-- 标题部分 -->
+        <div class="title">
+            <img src="./data/imgs/logo.png" alt="logo" class="logo">
+            <div class="name">
+                <li class="first_item">智慧港航</li>
+                <li class="second_">基于多源数据的船舶入港管理系统</li>
+            </div>
+        </div>
+        <!-- 功能部分 -->
+        <div class="function_item">
+            <li>入港检测</li>
+            <li>拖船调度</li>
+            <li>锚地管理</li>
+            <li>作业展示</li>
+            <li>联系我们</li>
+        </div>
+        <!-- 登录部分 -->
+        <div class="login">
+            <img src="./data/imgs/登录.png" alt="">
+            <div class="log_in">登录</div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="map"></div>
+        <div id="info">
+            <div class="vedio">
+                <li>
+                    <span>入港口</span>
+                    <div>更多</div>
+                </li>
+                <li>
+                    <span>锚地</span>
+                    <div>更多</div>
+                </li>
+                <li>
+                    <span></span>
+                </li>
+            </div>
+            <div class="message">
+                <li></li>
+                <li class="sec"></li>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="./js/main.js"></script>
+
+</html>

@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+//去除百度地图发logo
+.BMap_cpyCtrl {
+    display: none;
+}
+ 
+.anchorBL {
+    display: none;
+}
+
+.nav{
+    height: 8vh;
+    width: 100%;
+    background-color:rgb(29,55,76);
+    position: relative;
+    //  标题部分
+    .title{
+        position:absolute;
+        left: 0;
+        top:0;
+        height: 8vh;
+        width: 8rem;
+        //background-color: #fff;
+        .logo{
+            position: absolute;
+            left: 0;
+            width: 8vh; 
+            height: 8vh;
+        }
+        .name{
+            position: absolute;
+            left: 8vh;
+            height: 8vh;
+            li{
+                height: 4vh;
+                font-weight: 800;
+                color: #f6f6f6;
+                font-size: .225rem;
+                line-height: 4vh;
+            }
+            .first_item{
+                font-size: .4rem;
+            }
+        }
+    }
+    .function_item{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 10rem;
+        display: flex;
+        // align-items: center;
+        // justify-content: center;
+        li{
+            flex: 1;
+            height: 8vh;
+            text-align: center;
+            line-height: 8vh;
+            font-size: .3125rem;
+            font-weight: 800;
+            border-right: solid 1px;
+        color: #f6f6f6;
+        }
+    }
+}
+#main{
+    height: 92vh;
+    width: 100%;
+  //  background-color: rgb(92, 30, 30);
+}

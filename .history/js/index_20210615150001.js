@@ -1,0 +1,13 @@
+/**
+ * 导航栏二级菜单
+ */
+const function_item = document.querySelector('.function_item');
+const lis = function_item.children;
+for (let i = 1; i < lis.length; i++) {
+    lis[i].onmouseover =  () {
+        this.children[1].style.display = 'block';
+    }
+    lis[i].onmouseout = () => {
+        this.children[1].style.display = 'none';
+    }
+}

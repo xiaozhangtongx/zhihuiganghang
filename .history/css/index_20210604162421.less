@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+//去除百度地图发logo
+.BMap_cpyCtrl {
+    display: none;
+}
+ 
+.anchorBL {
+    display: none;
+}
+
+.nav{
+    height: 8vh;
+    width: 100%;
+    background-color:rgb(29,55,76);
+    position: relative;
+    //  标题部分
+    .title{
+        position:absolute;
+        left: 0;
+        top:0;
+        height: 8vh;
+        width: 8rem;
+        //background-color: #fff;
+        .logo{
+            position: absolute;
+            left: 0;
+            width: 8v;
+        }
+    }
+    // 登录部分 
+    .login{
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 8vh;
+        width: 2rem;
+        //background-color: rgb(231, 61, 61);
+    }
+    .function_item{
+        position: absolute;
+        right: 2.5rem;
+        top: 0;
+        width: 10rem;
+        display: flex;
+        // align-items: center;
+        // justify-content: center;
+        li{
+            flex: 1;
+            height: 8vh;
+            text-align: center;
+            line-height: 8vh;
+            font-size: .3125rem;
+            font-weight: 800;
+        color: #f6f6f6ff;
+        }
+    }
+}
+#main{
+    height: 92vh;
+    width: 100%;
+  //  background-color: rgb(92, 30, 30);
+}

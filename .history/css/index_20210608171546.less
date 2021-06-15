@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    //c3盒子模型
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+//去除百度地图发logo
+.BMap_cpyCtrl {
+    display: none;
+}
+ 
+.anchorBL {
+    display: none;
+}
+
+
+
+/***************************导航栏部分***************************/
+.nav{
+    height: 8vh;
+    width: 100%;
+    background-color:rgb(29,55,76);
+    position: relative;
+
+
+    //  标题部分
+    .title{
+        position:absolute;
+        left: 0;
+        top:0;
+        height: 8vh;
+        width: 8rem;
+        //background-color: #fff;
+        .logo{
+            position: absolute;
+            left: 0;
+            width: 8vh; 
+            height: 8vh;
+        }
+        .name{
+            position: absolute;
+            left: 8vh;
+            height: 8vh;
+            li{
+                height: 4vh;
+                font-weight: 800;
+                color: #f6f6f6;
+                font-size: .25rem;
+                line-height: 4vh;
+            }
+            .first_item{
+                font-size: .4rem;
+            }
+        }
+    }
+
+
+    // 登录部分 
+    .login{
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 8vh;
+        width: 8vh;
+        //background-color: rgb(231, 61, 61);
+        display: inline-flex;
+        justify-items: center;
+        align-items: center;
+        color: #f6f6f6;
+        font-weight: 800;
+        img{
+            width: 3vh;
+            height: 3vh;
+        }
+    }
+
+
+    //功能按钮
+    .function_item{
+        position: absolute;
+        right: 8vh;
+        top: 0;
+        width: 10rem;
+        display: flex;
+        // align-items: center;
+        // justify-content: center;
+        li{
+            flex: 1;
+            height: 8vh;
+            text-align: center;
+            line-height: 8vh;
+            font-size: .3125rem;
+            font-weight: 800;
+            color: #f6f6f6;
+            // background-color: rgb(21, 219, 21);
+            margin-left: .0375rem;
+        }
+    }
+}
+
+
+/***************************主体部分***************************/
+#main{
+    height: 92vh;
+    width: 100%;
+    #show_video{
+        video{
+            height: 91.5vh;
+            width: 50vw;
+            object-fit:fill;
+            border: #000 solid .0625rem;
+        }
+    }
+    
+    //信息展示部分
+    #info{
+        height: 92vh;
+        width: 50vw;
+        position: absolute;
+        top:8vh;
+        right: 0;
+        background-color: black;
+        
+        //监控展示部分
+        .video{
+            position: relative;
+            height: 46vh;
+            background-color: #000;
+            display: flex;
+            li{
+               flex: 1;
+               background-color: #f6f6f6;
+               margin: .075rem;
+               span{
+                   display: block;
+                   text-align: center;
+                   font-size: .36rem;
+                   font-weight: 800;
+                   background:rgba(0, green, blue, alpha)
+               }
+               .more{
+                   position: absolute;
+               }
+            }
+            .rugang{
+                background-image: url(../data/imgs/拖船.jpg);
+                background-size:cover;
+                background-repeat: no-repeat;
+            }
+            #sec_li{
+                margin-left: 0;
+                margin-right: 0;
+                background-image: url(../data/imgs/锚地.jpg);
+                background-size:cover;
+                background-repeat: no-repeat;
+            }
+            .working{
+                background-image: url(../data/imgs/作业.jpg);
+                background-size:cover;
+                background-repeat: no-repeat; 
+            }
+        
+        }
+
+        //信息展示部分
+        .message{
+            height: 46vh;
+            background-color: rgb(14, 150, 212);
+            display: flex;
+            li{
+                flex: 3;
+                margin: .25rem;
+                background-color: rgb(27, 182, 117);
+                margin-top: .25rem;
+                width: 1.25rem;
+            }
+            .sec{
+                margin-left: 0;
+            }
+        }
+    }
+}

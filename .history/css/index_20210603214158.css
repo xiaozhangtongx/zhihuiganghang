@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.nav {
+  height: 10vh;
+  width: 100%;
+  background-color: #1d374c;
+}
+.main {
+  height: 90vh;
+  width: 100%;
+  background-color: #e9a744;
+}
