@@ -20,7 +20,7 @@ a {
 .nav {
   height: 8vh;
   width: 100%;
-  background-color: #00479a;
+  background-color: #1d374c;
   position: relative;
 }
 .nav .title {
@@ -88,7 +88,7 @@ a {
 .nav .function_item li ul {
   position: relative;
   display: none;
-  background: rgba(0, 71, 154, 0.9);
+  background: #1d374c;
   z-index: 9999;
 }
 .nav .function_item li ul li {
@@ -100,85 +100,129 @@ a {
 #main {
   height: 92vh;
   width: 100%;
+  position: relative;
+  /***************************首页——监控展示部分***************************/
+  /***************************拖船查询部分***************************/
+  /***************************拖船信息部分***************************/
+  /***************************走锚判断***************************/
+  /***************************锚地信息展示***************************/
+  /***************************泊位查询**************************/
+  /***************************作业展示**************************/
+  /***************************装卸效率**************************/
 }
-#main #show_video video {
-  height: 91.5vh;
+#main #home {
+  height: 92vh;
+  font-weight: 100%;
+  background-color: #203b5e;
+}
+#main #home #show_video {
+  height: 92vh;
+  width: 50vw;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #203b5e;
+}
+#main #home #show_video header {
+  color: #f6f6f6;
+  padding-bottom: 0.1rem;
+  font-weight: 0.3125rem;
+  font-size: 0.375rem;
+  font-weight: 800;
+}
+#main #home #show_video video {
+  height: 85vh;
   width: 50vw;
   object-fit: fill;
+  border-radius: 0.1975rem;
 }
-#main #info {
+#main #home #info {
   height: 92vh;
   width: 50vw;
   position: absolute;
-  top: 8vh;
+  top: 0;
   right: 0;
-  background-color: #9fd0e7;
 }
-#main #info .video {
+#main #home #info .video {
   height: 46vh;
-  background-color: #9fd0e7;
+  background-color: #203b5e;
   display: flex;
 }
-#main #info .video li {
+#main #home #info .video li {
   position: relative;
   flex: 1;
   background-color: #f6f6f6;
   margin: 0.075rem;
+  border-radius: 0.1975rem;
 }
-#main #info .video li span {
+#main #home #info .video li span {
   display: block;
   text-align: center;
-  font-size: 0.36rem;
+  height: 0.5rem;
+  font-size: 0.275rem;
   font-weight: 800;
+  line-height: 0.5rem;
   background: rgba(0, 0, 0, 0.6);
   color: #f6f6f6;
+  border-top-left-radius: 0.1975rem;
+  border-top-right-radius: 0.1975rem;
 }
-#main #info .video li .more {
+#main #home #info .video li .more {
   position: absolute;
   bottom: 0.125rem;
   right: 0;
   background: rgba(0, 0, 0, 0.6);
   color: #f6f6f6;
+  font-size: 0.25rem;
 }
-#main #info .video .rugang {
+#main #home #info .video .rugang {
   background-image: url(../data/imgs/拖船.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
-#main #info .video #sec_li {
+#main #home #info .video #sec_li {
   margin-left: 0;
   margin-right: 0;
   background-image: url(../data/imgs/锚地.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
-#main #info .video .working {
+#main #home #info .video .working {
   background-image: url(../data/imgs/作业.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
-#main #info .message {
+#main #home #info .message {
   height: 46vh;
-  background-color: #9fd0e7;
+  background-color: #203b5e;
   display: flex;
 }
-#main #info .message li {
+#main #home #info .message li {
   flex: 3;
   margin: 0.25rem;
-  background: rgba(252, 252, 252, 0.5);
+  background: rgba(252, 252, 252, 0.9);
   margin-top: 0.25rem;
   width: 1.25rem;
+  border-radius: 0.1975rem;
 }
-#main #info .message li h2 {
+#main #home #info .message li header {
+  text-align: center;
+  font-family: "楷体", "楷体_GB2312";
+  font-size: 0.375rem;
+  font-weight: 800;
+}
+#main #home #info .message li h5 {
   text-align: center;
 }
-#main #info .message li h3 {
-  text-align: center;
-}
-#main #info .message li tr {
+#main #home #info .message li tr {
   height: 0.7rem;
 }
-#main #info .message li tr td {
+#main #home #info .message li tr th {
+  font-size: 0.25rem;
+}
+#main #home #info .message li tr td {
   display: inline-block;
   width: 1.875rem;
   color: #6d6c6c;
@@ -186,9 +230,133 @@ a {
   height: 0.7rem;
   text-align: center;
   line-height: 0.7rem;
+  font-size: 0.25rem;
 }
-#main #info .message .sec {
+#main #home #info .message .sec {
   margin-left: 0;
+}
+#main #home #info .message .sec .showtime {
+  display: block;
+}
+#main #ship_search {
+  display: none;
+}
+#main #ship_search #port {
+  position: absolute;
+  height: 92vh;
+  width: 100%;
+  top: 0;
+}
+#main #ship_search .ship_search_info {
+  position: absolute;
+  width: 5.1rem;
+  height: 3.875rem;
+  background: rgba(248, 247, 247, 0.9);
+  top: 0;
+  right: 0;
+  border-bottom-left-radius: 5%;
+}
+#main #ship_search .ship_search_info .searchkuang {
+  position: absolute;
+  margin-top: 0.0625rem;
+  left: 50%;
+  transform: translate(-50%);
+  width: 3.8rem;
+  height: 0.4625rem;
+  border: 0.025rem solid #f85524;
+}
+#main #ship_search .ship_search_info .searchkuang input {
+  float: left;
+  width: 3rem;
+  height: 100%;
+  padding-left: 10px;
+  border: none;
+  font-size: 0.175rem;
+}
+#main #ship_search .ship_search_info .searchkuang button {
+  float: left;
+  width: 0.75rem;
+  height: 100%;
+  font-size: 0.2rem;
+  font-weight: 800;
+  background-color: #f85524;
+  color: #fff;
+}
+#main #ship_search .ship_search_info .ships {
+  position: absolute;
+  top: 0.5rem;
+}
+#main #ship_search .ship_search_info .ships li {
+  height: 0.5rem;
+  width: 5.1rem;
+  color: #140b0b;
+  font-size: 0.3rem;
+  margin-bottom: 3px;
+  line-height: 0.625rem;
+  font-weight: 700;
+}
+#main #ship_search .ship_search_info .ships li span {
+  padding-left: 0.8rem;
+  color: #4b4a4a;
+  font-style: italic;
+}
+#main #show_ship_data {
+  display: none;
+  position: absolute;
+  height: 92vh;
+  width: 100%;
+  top: 0;
+  background-color: #f17f32;
+}
+#main #isLeave {
+  display: none;
+}
+#main #isLeave #anchor {
+  position: absolute;
+  height: 92vh;
+  width: 100%;
+  top: 0;
+}
+#main #isLeave .show_isLeave {
+  position: absolute;
+  width: 5.1rem;
+  height: 3.875rem;
+  background: rgba(248, 247, 247, 0.9);
+  top: 0;
+  right: 0;
+  border-bottom-left-radius: 5%;
+}
+#main #show_anchor_info {
+  display: none;
+  position: absolute;
+  height: 92vh;
+  width: 100%;
+  top: 0;
+  background-color: #179dbe;
+}
+#main #berth_search {
+  display: none;
+  position: absolute;
+  height: 92vh;
+  width: 100%;
+  top: 0;
+  background-color: #1259dd;
+}
+#main #show_berth_work {
+  display: none;
+  position: absolute;
+  height: 92vh;
+  width: 100%;
+  top: 0;
+  background-color: #991fc9;
+}
+#main #work_effic {
+  display: none;
+  position: absolute;
+  height: 92vh;
+  width: 100%;
+  top: 0;
+  background-color: #e00a2e;
 }
 /***************************Jquery后面加的***************************/
 /**********导航栏部分**********/

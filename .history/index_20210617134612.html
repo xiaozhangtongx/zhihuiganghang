@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧港航——基于多源数据的港口水域监管系统</title>
+    <link rel="shortcut icon" href="./data/imgs/logo.ico" />
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/flexible.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://api.map.baidu.com/api?ak=WEKSeRPHGGyNfOS4NLbc3cBD6f1YaqMU&services=true"></script>
+    <script src="http://mapv.baidu.com/build/mapv.min.js"></script>
+    <script src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
+</head>
+
+<body>
+    <!--                   导航栏模块     -->
+
+    <div class="nav">
+        <!-- 标题部分 -->
+        <div class="title">
+            <img src="./data/imgs/logo.png" alt="logo" class="logo">
+            <div class="name">
+                <li class="first_item">智慧港航</li>
+                <li class="second_">基于多源数据的港口水域监管系统</li>
+            </div>
+        </div>
+        <!-- 功能部分 -->
+        <div class="function_item">
+            <li><a href="#">航道监测</a></li>
+            <li>
+                <a href="#">拖船监管</a>
+                <ul>
+                    <li><a href="#">拖船查询</a></li>
+                    <li><a href="#">信息展示</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">锚地管理</a>
+                <ul>
+                    <li><a href="#">走锚判断</a></li>
+                    <li><a href="#">信息展示</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">泊位作业</a>
+                <ul>
+                    <li><a href="#">作业动态</a></li>
+                    <li><a href="#">装卸效率</a></li>
+                </ul>
+            </li>
+            <!-- <li>
+                <a href="#">关于我们</a>
+                <ul>
+                    <li><a href="#">产品价格</a></li>
+                </ul>
+            </li> -->
+        </div>
+        <!-- 登录部分 -->
+        <div class="login">
+            <img src="./data/imgs/登录.png" alt="">
+            <div class="log_in">登录</div>
+        </div>
+    </div>
+
+
+
+    <!--首页视频展示-->
+    <div id="main">
+        <div id="home">
+
+        </div>
+    </div>
+
+</body>
+<script src="./js/index.js"></script>
+
+</html>
