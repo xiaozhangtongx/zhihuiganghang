@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>智慧港航——基于多源数据的港口水域监管系统</title>
     <link rel="shortcut icon" href="./data/imgs/logo.ico" />
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css">
     <script src="./js/flexible.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -19,164 +20,103 @@
 
 <body>
     <!--                   导航栏模块     -->
-
-    <div class="nav">
-        <!-- 标题部分 -->
-        <div class="title">
-            <img src="./data/imgs/logo.png" alt="logo" class="logo">
-            <div class="name">
-                <li class="first_item">智慧港航</li>
-                <li class="second_">基于多源数据的港口水域监管系统</li>
-            </div>
+    <header>
+        <h1>基于多源数据的港口水域监管系统</h1>
+        <div class="showTime">当前时间：2020年3月17 0时54分14秒</div>
+        <div class="show_functions">
+            <ul class="menu">
+                <li class="list"><a href="#" id="fun_home">系统主页</a></li>
+                <li class="list"><a href="#" id="fun_path">航道管理</a>
+                </li>
+                <li class="list"><a href="#">拖船管理</a>
+                    <ul class="items">
+                        <li> <a href="#" id="fun_ship_search"> 拖船查询 </a></li>
+                        <li> <a href="#" id="fun_show_ship"> 信息展示 </a></li>
+                    </ul>
+                </li>
+                <li class="list"><a href="#">锚地管理</a>
+                    <ul class="items">
+                        <li> <a href="#" id="fun_isLeave"> 走锚判断 </a></li>
+                        <li> <a href="#" id="fun_show_anchor"> 信息展示 </a></li>
+                    </ul>
+                </li>
+                <li class="list"><a href="#">泊位管理</a>
+                    <ul class="items">
+                        <li> <a href="#" id="fun_berth_search"> 泊位查询 </a></li>
+                        <li> <a href="#" id="fun_show_work"> 作业展示 </a></li>
+                        <li> <a href="#" id="fun_show_effic"> 装卸效率 </a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-        <!-- 功能部分 -->
-        <div class="function_item">
-            <li><a href="#">航道监测</a></li>
-            <li>
-                <a href="#" class="fun_ship">拖船监管</a>
-                <ul>
-                    <li class="li_ship_search"><a href="#">拖船查询</a></li>
-                    <li class="li_ship_search_info"><a href="#">信息展示</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="fun_anchor">锚地管理</a>
-                <ul>
-                    <li class="li_anchor_isleave"><a href="#">走锚判断</a></li>
-                    <li class="li_anchor_showdata"><a href="#">信息展示</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="fun_berth">泊位作业</a>
-                <ul>
-                    <li class="li_berth_search"><a href="#">泊位查询</a></li>
-                    <li class="li_berth_work"><a href="#">作业展示</a></li>
-                    <li class="li_work_effic"><a href="#">装卸效率</a></li>
-                </ul>
-            </li>
-            <!-- <li>
-                <a href="#">关于我们</a>
-                <ul>
-                    <li><a href="#">产品价格</a></li>
-                </ul>
-            </li> -->
-        </div>
-        <!-- 登录部分 -->
-        <div class="login">
-            <img src="./data/imgs/登录.png" alt="">
-            <div class="log_in">登录</div>
-        </div>
-    </div>
-
-
-
+    </header>
 
     <!-- 主体内容本部分 -->
     <div id="main">
 
-        <!-- 首页——监控展示部分 start-->
-        <div id="home">
-            <div id="show_video">
-                <header>监控图像识别</header>
-                <video src="../715f0e300ead5917a96725ee519b35aa/1.mp4" autoplay loop muted></video>
-            </div>
-            <div id="info">
-                <div class="video">
-                    <li class="rugang">
-                        <span>航道监控</span>
-                        <div class="more">更多</div>
-                    </li>
-                    <li id="sec_li">
-                        <span>锚地监控</span>
-                        <div class="more">更多</div>
-                    </li>
-                    <li class="working">
-                        <span>泊位监控</span>
-                        <div class="more">更多</div>
-                    </li>
+        <!-- 首页——系统主页部分 start-->
+        <div class="mainbox">
+            <div class="column">
+                <div class="show_infor_left">
+
                 </div>
-                <div class="message">
-                    <li>
-                        <header>船舶信息</header>
-                        <table>
-                            <tr>
-                                <th>船名:</th>
-                                <td>安通27</td>
-                                <th>MMSI:</th>
-                                <td>413451530</td>
-                            </tr>
-                            <tr>
-                                <th>IMO:</th>
-                                <td>1400704</td>
-                                <th>呼号:</th>
-                                <td>BKRT6</td>
-                            </tr>
-                            <tr>
-                                <th>船长:</th>
-                                <td>96米</td>
-                                <th>船宽:</th>
-                                <td>15米</td>
-                            </tr>
-                            <tr>
-                                <th>经度:</th>
-                                <td>122.987E</td>
-                                <th>纬度:</th>
-                                <td>29.271N</td>
-                            </tr>
-                            <tr>
-                                <th>吃水:</th>
-                                <td>5米</td>
-                                <th>航速:</th>
-                                <td>9.3节</td>
-                            </tr>
-                            <tr>
-                                <th>船首向:</th>
-                                <td>49.0度</td>
-                                <th>航迹向:</th>
-                                <td>50.4度</td>
-                            </tr>
-                        </table>
-                    </li>
-                    <li class="sec">
-                        <header>港口气象</header>
-                        <header class="showtime">2021年5月27日 08点24分07秒</header>
-                        <table>
-                            <tr>
-                                <th>风速:</th>
-                                <td>4.7米/秒</td>
-                                <th>风向:</th>
-                                <td>75度</td>
-                            </tr>
-                            <tr>
-                                <th>浪高:</th>
-                                <td>-</td>
-                                <th>涌高:</th>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <th>涌向:</th>
-                                <td>-</td>
-                                <th>涌周期:</th>
-                                <td>-</td>
-                            </tr>
-                            <tr>
-                                <th>温度:</th>
-                                <td>26摄氏度</td>
-                                <th>湿度:</th>
-                                <td>75%</td>
-                            </tr>
-                            <tr>
-                                <th>气压:</th>
-                                <td>1010hPa</td>
-                                <th>能见度:</th>
-                                <td>-</td>
-                            </tr>
-                        </table>
-                    </li>
+                <div class="home_box">
+                    <h2>fun1</h2>
+                    <div class="home_infor"></div>
+                    <div class="home_box-footer"></div>
+                </div>
+                <div class="home_box">
+                    <h2>fun2</h2>
+                    <div class="home_infor"></div>
+                    <div class="home_box-footer"></div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="no">
+                    <div class="no-hd">
+                        <ul>
+                            <li>811</li>
+                            <li>63</li>
+                        </ul>
+                    </div>
+                    <div class="no-bd">
+                        <ul>
+                            <li>进港船舶数量</li>
+                            <li>出港船舶数量</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="map_home">
+                </div>
+            </div>
+            <div class="column">
+                <div class="home_box">
+                    <h2>fun3</h2>
+                    <div class="home_infor"></div>
+                    <div class="home_box-footer"></div>
+                </div>
+                <div class="home_box">
+                    <h2>fun4</h2>
+                    <div class="home_infor"></div>
+                    <div class="home_box-footer"></div>
                 </div>
             </div>
         </div>
-        <!-- 首页——监控展示部分 end-->
+        <!-- 首页——系统主页部分 end-->
+
+
+
+        <!-- 航道监测 start-->
+        <div id="show_path">
+            <div id="path_map"></div>
+            <div class="path_infor">
+                <li class="path_infor_top">
+                    <video src="./data/video/1.mp4" autoplay loop muted></video>
+                </li>
+                <li class="path_infor_bottom"></li>
+            </div>
+        </div>
+        <!-- 航道监测 end-->
 
 
 
@@ -207,7 +147,15 @@
 
         <!-- 拖船信息展示 start-->
         <div id="show_ship_data">
-
+            <!-- 动态展示的图 -->
+            <div class="ship_data_left">
+                <div id="show_heatmap"></div>
+            </div>
+            <!-- 右侧的信息展示 -->
+            <div class="ship_data_right">
+                <li class="ship_data_right_top">展示现在拖船有多少是空闲的，有多少是工作的</li>
+                <li class="ship_data_right_bottom">推荐拖船</li>
+            </div>
         </div>
         <!-- 拖船信息展示 end-->
 
@@ -226,11 +174,12 @@
 
         <!-- 锚地信息展示 start -->
         <div id="show_anchor_info">
-
+            <!-- 锚地地图展示 -->
+            <div id="map_anchor"></div>
+            <!-- 信息展示 -->
+            <div class="anchor_info_1"></div>
         </div>
         <!-- 锚地信息展示 end -->
-
-
 
         <!-- 泊位查询 start -->
         <div id="berth_search">
@@ -255,7 +204,8 @@
         <!-- 装卸效率 end -->
     </div>
 </body>
+<script src="./js/show_info.js"></script>
 <script src="./js/map.js"></script>
-<script src="./js/index.js"></script>
+<script src="./js/main.js"></script>
 
 </html>

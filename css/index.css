@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: '楷体';
 }
 li {
   list-style: none;
@@ -10,98 +11,162 @@ a {
   text-decoration: none;
   color: #f6f6f6;
 }
+@font-face {
+  font-family: electronicFont;
+  src: url(../font/DS-DIGIT.TTF);
+}
 .BMap_cpyCtrl {
   display: none;
 }
 .anchorBL {
   display: none;
 }
+body {
+  background-image: url(../data/imgs/bg.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  line-height: 1.15;
+  background-size: cover;
+}
 /***************************导航栏部分***************************/
-.nav {
-  height: 8vh;
-  width: 100%;
-  background-color: #1d374c;
+header {
   position: relative;
+  height: 10vh;
+  background: url(../data/imgs/header.png) no-repeat top center;
+  background-size: 100% 100%;
 }
-.nav .title {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 8vh;
-  width: 8rem;
-}
-.nav .title .logo {
-  position: absolute;
-  left: 0;
-  width: 8vh;
-  height: 8vh;
-}
-.nav .title .name {
-  position: absolute;
-  left: 8vh;
-  height: 8vh;
-}
-.nav .title .name li {
-  height: 4vh;
-  font-weight: 800;
-  color: #f6f6f6;
-  font-size: 0.25rem;
-  line-height: 4vh;
-}
-.nav .title .name .first_item {
-  font-size: 0.4rem;
-}
-.nav .login {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 8vh;
-  width: 8vh;
-  display: inline-flex;
-  justify-items: center;
-  align-items: center;
-  color: #f6f6f6;
-  font-weight: 800;
-  font-size: 0.25rem;
-}
-.nav .login img {
-  width: 3vh;
-  height: 3vh;
-}
-.nav .function_item {
-  position: absolute;
-  right: 8vh;
-  top: 0;
-  width: 10rem;
-  display: flex;
-}
-.nav .function_item li {
-  flex: 1;
-  height: 8vh;
+header h1 {
+  font-size: 0.475rem;
+  color: #fff;
   text-align: center;
-  line-height: 8vh;
-  font-size: 0.3125rem;
-  font-weight: 800;
-  color: #f6f6f6;
-  margin-left: 0.0375rem;
+  line-height: 10vh;
 }
-.nav .function_item li ul {
-  position: relative;
-  display: none;
-  background: #1d374c;
-  z-index: 9999;
-}
-.nav .function_item li ul li {
-  border-top: #f7f7f7 solid 0.05rem;
-  margin-left: 0;
+header .showTime {
+  position: absolute;
+  top: 0;
+  right: 0.375rem;
+  line-height: 0.9375rem;
   font-size: 0.25rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+header .show_functions {
+  position: absolute;
+  top: 0.2rem;
+  left: 0;
+  width: 0.625rem;
+  height: 0.625rem;
+  background: url(../data/imgs/功能.png);
+  background-size: 100% 100%;
+  z-index: 5000;
+}
+header .show_functions .menu {
+  display: none;
+  position: absolute;
+  top: 0.625rem;
+  background-color: #fff;
+  width: 2.5rem;
+  font-family: 'Century Gothic';
+  box-shadow: 0px 0px 25px #00000070;
+  clear: both;
+}
+header .show_functions .menu .list {
+  font-size: 14px;
+  border-bottom: 1px solid #324252;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  vertical-align: sub;
+  background: #3e5165;
+  clear: both;
+  font-size: 0.3125rem;
+}
+header .show_functions .menu .list:after {
+  content: "\f107";
+  font-family: FontAwesome;
+  position: absolute;
+  right: 17px;
+  top: 17px;
+  padding: 0px 5px;
+  color: #fff;
+}
+header .show_functions .menu .list a {
+  text-decoration: none;
+  color: #fff;
+  padding: 17px 0px 17px 5px;
+  display: block;
+  height: 100%;
+}
+header .show_functions .menu .list a:hover {
+  background-color: #324252;
+  transition: 300ms all;
+  color: #09fbd2;
+}
+header .show_functions .menu .list .items {
+  height: 0px;
+  overflow: hidden;
+}
+header .show_functions .menu .list .items a {
+  padding: 17px;
+}
+header .show_functions .menu .list .items a:hover {
+  background-color: #3f5d79;
+  color: #fff;
+  transition: 300ms all;
+}
+header .show_functions .menu .list:last-child {
+  border-bottom: none;
+}
+header .show_functions .menu .active:after {
+  content: "\f106";
+  font-family: FontAwesome;
+  position: absolute;
+  right: 17px;
+  top: 17px;
+  padding: 0px 5px;
+  color: #fff;
+}
+header .show_functions .menu .active > .items {
+  display: block;
+  background: #23313f;
+  padding: 0px;
+  height: auto;
+  color: #fff;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 200ms;
+  clear: both;
+  float: left;
+  width: 100%;
+}
+header .show_functions .menu .active > .items li {
+  padding: 0px;
+  border-bottom: 1px solid #324252;
+  list-style: none;
+}
+header .show_functions .menu .active > .items li:last-child {
+  border-color: transparent;
+  padding-bottom: 0px;
+}
+header .show_functions .menu .active > .items .active > .items {
+  background-color: #2f4b67;
+}
+header .show_functions .menu .active > a {
+  color: #46efa4;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+header .show_functions .menu .active .list {
+  background: #697d92;
+}
+header .show_functions .menu .active .list a {
+  padding: 17px 0px 17px 45px;
 }
 /***************************主体部分***************************/
 #main {
-  height: 92vh;
+  height: 90vh;
   width: 100%;
   position: relative;
-  /***************************首页——监控展示部分***************************/
+  /***************************系统主页***************************/
+  /***************************航道监测***************************/
   /***************************拖船查询部分***************************/
   /***************************拖船信息部分***************************/
   /***************************走锚判断***************************/
@@ -110,140 +175,196 @@ a {
   /***************************作业展示**************************/
   /***************************装卸效率**************************/
 }
-#main #home {
-  height: 92vh;
-  font-weight: 100%;
-  background-color: #203b5e;
-}
-#main #home #show_video {
-  height: 92vh;
-  width: 50vw;
+#main .mainbox {
+  height: 90vh;
+  padding: 0.125rem 0.125rem 0;
   display: flex;
-  flex-flow: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  background-color: #203b5e;
 }
-#main #home #show_video header {
-  color: #f6f6f6;
-  padding-bottom: 0.1rem;
-  font-weight: 0.3125rem;
-  font-size: 0.375rem;
-  font-weight: 800;
+#main .mainbox .column {
+  flex: 3;
 }
-#main #home #show_video video {
-  height: 85vh;
-  width: 50vw;
-  object-fit: fill;
-  border-radius: 0.1975rem;
+#main .mainbox .column:nth-child(2) {
+  flex: 5;
+  margin: 0 0.25rem 0.25rem;
 }
-#main #home #info {
-  height: 92vh;
-  width: 50vw;
+#main .mainbox .home_box {
+  position: relative;
+  height: 3.875rem;
+  border: 1px solid rgba(25, 186, 139, 0.17);
+  background: rgba(255, 255, 255, 0.2) url(../data/imgs/line\(1\).png);
+  padding: 0 0.1875rem 0.5rem;
+  margin-bottom: 2.1rem;
+}
+#main .mainbox .home_box::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 0.125rem;
+  height: 0.125rem;
+  border-top: 2px solid #02a6b5;
+  border-left: 2px solid #02a6b5;
+}
+#main .mainbox .home_box::after {
   position: absolute;
   top: 0;
   right: 0;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #02a6b5;
+  border-right: 2px solid #02a6b5;
 }
-#main #home #info .video {
-  height: 46vh;
-  background-color: #203b5e;
+#main .mainbox .home_box .home_box-footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+#main .mainbox .home_box .home_box-footer::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 0.125rem;
+  height: 0.125rem;
+  border-bottom: 0.025rem solid #02a6b5;
+  border-left: 0.025rem solid #02a6b5;
+}
+#main .mainbox .home_box .home_box-footer::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  content: "";
+  width: 0.125rem;
+  height: 0.125rem;
+  border-bottom: 0.025rem solid #02a6b5;
+  border-right: 0.025rem solid #02a6b5;
+}
+#main .mainbox .home_box h2 {
+  height: 0.6rem;
+  line-height: 0.6rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.25rem;
+  font-weight: 400;
+}
+#main .mainbox .home_box .home_infor {
+  height: 3rem;
+}
+#main .mainbox .no {
+  background: rgba(101, 132, 226, 0.1);
+  padding: 0.1875rem;
+}
+#main .mainbox .no .no-hd {
+  position: relative;
+  border: 0.0125rem solid rgba(25, 186, 139, 0.17);
+}
+#main .mainbox .no .no-hd::before {
+  content: "";
+  position: absolute;
+  width: 0.375rem;
+  height: 0.125rem;
+  border-top: 0.025rem solid #02a6b5;
+  border-left: 0.025rem solid #02a6b5;
+  top: 0;
+  left: 0;
+}
+#main .mainbox .no .no-hd::after {
+  content: "";
+  position: absolute;
+  width: 0.375rem;
+  height: 0.125rem;
+  border-bottom: 0.025rem solid #02a6b5;
+  border-right: 0.025rem solid #02a6b5;
+  right: 0;
+  bottom: 0;
+}
+#main .mainbox .no .no-hd ul {
   display: flex;
 }
-#main #home #info .video li {
+#main .mainbox .no .no-hd ul li {
   position: relative;
   flex: 1;
-  background-color: #f6f6f6;
-  margin: 0.075rem;
-  border-radius: 0.1975rem;
-}
-#main #home #info .video li span {
-  display: block;
   text-align: center;
-  height: 0.5rem;
-  font-size: 0.275rem;
-  font-weight: 800;
-  line-height: 0.5rem;
-  background: rgba(0, 0, 0, 0.6);
-  color: #f6f6f6;
-  border-top-left-radius: 0.1975rem;
-  border-top-right-radius: 0.1975rem;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 0.875rem;
+  color: #ffeb7b;
+  padding: 0.05rem 0;
+  font-family: electronicFont;
+  font-weight: bold;
 }
-#main #home #info .video li .more {
+#main .mainbox .no .no-hd ul li:first-child::after {
+  content: "";
   position: absolute;
-  bottom: 0.125rem;
+  height: 50%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.2);
   right: 0;
-  background: rgba(0, 0, 0, 0.6);
-  color: #f6f6f6;
-  font-size: 0.25rem;
+  top: 25%;
 }
-#main #home #info .video .rugang {
-  background-image: url(../data/imgs/拖船.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-#main #home #info .video #sec_li {
-  margin-left: 0;
-  margin-right: 0;
-  background-image: url(../data/imgs/锚地.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-#main #home #info .video .working {
-  background-image: url(../data/imgs/作业.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-#main #home #info .message {
-  height: 46vh;
-  background-color: #203b5e;
+#main .mainbox .no .no-bd ul {
   display: flex;
 }
-#main #home #info .message li {
-  flex: 3;
-  margin: 0.25rem;
-  background: rgba(252, 252, 252, 0.9);
-  margin-top: 0.25rem;
-  width: 1.25rem;
+#main .mainbox .no .no-bd ul li {
+  flex: 1;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  text-align: center;
+  font-size: 0.3325rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 800;
+  padding-top: 0.125rem;
+}
+#main .mainbox #map_home {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04) url(../data/imgs/line\(1\).png);
+  height: 7.9375rem;
+  border: 1px solid rgba(25, 186, 139, 0.17);
+}
+#main #show_path {
+  display: none;
+}
+#main #show_path #path_map {
+  position: absolute;
+  height: 90vh;
+  width: 70vw;
+  background-color: #7cd6d6;
+  top: 0;
+}
+#main #show_path .path_infor {
+  position: absolute;
+  height: 90vh;
+  width: 28vw;
+  top: 0;
+  right: 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  flex-wrap: wrap;
+}
+#main #show_path .path_infor li {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.7);
+  width: 28vw;
+  height: 40vh;
+  margin: 4vh 0;
   border-radius: 0.1975rem;
 }
-#main #home #info .message li header {
-  text-align: center;
-  font-family: "楷体", "楷体_GB2312";
-  font-size: 0.375rem;
-  font-weight: 800;
-}
-#main #home #info .message li h5 {
-  text-align: center;
-}
-#main #home #info .message li tr {
-  height: 0.7rem;
-}
-#main #home #info .message li tr th {
-  font-size: 0.25rem;
-}
-#main #home #info .message li tr td {
-  display: inline-block;
-  width: 1.875rem;
-  color: #6d6c6c;
-  font-style: italic;
-  height: 0.7rem;
-  text-align: center;
-  line-height: 0.7rem;
-  font-size: 0.25rem;
-}
-#main #home #info .message .sec {
-  margin-left: 0;
-}
-#main #home #info .message .sec .showtime {
-  display: block;
+#main #show_path .path_infor li video {
+  height: 40vh;
+  width: 28vw;
+  object-fit: fill;
+  border-radius: 0.1975rem;
 }
 #main #ship_search {
   display: none;
 }
 #main #ship_search #port {
   position: absolute;
-  height: 92vh;
+  height: 90vh;
   width: 100%;
   top: 0;
 }
@@ -302,18 +423,55 @@ a {
 }
 #main #show_ship_data {
   display: none;
+}
+#main #show_ship_data .ship_data_left {
   position: absolute;
-  height: 92vh;
-  width: 100%;
+  height: 90vh;
+  width: 50vw;
   top: 0;
-  background-color: #f17f32;
+  background-color: #203b5e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main #show_ship_data .ship_data_left #show_heatmap {
+  flex: 1;
+  height: 90vh;
+  width: 48vw;
+  background-color: #fff;
+  border-radius: 0.1975rem;
+}
+#main #show_ship_data .ship_data_right {
+  position: absolute;
+  height: 90vh;
+  width: 50vw;
+  top: 0;
+  right: 0;
+  background-color: #203b5e;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#main #show_ship_data .ship_data_right li {
+  flex: 2;
+  background: rgba(248, 247, 247, 0.9);
+  width: 45vw;
+  height: 55vh;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  border-radius: 0.1975rem;
+}
+#main #show_ship_data .ship_data_right .ship_data_right_bottom {
+  margin-top: 0vh;
 }
 #main #isLeave {
   display: none;
 }
 #main #isLeave #anchor {
   position: absolute;
-  height: 92vh;
+  height: 90vh;
   width: 100%;
   top: 0;
 }
@@ -328,16 +486,17 @@ a {
 }
 #main #show_anchor_info {
   display: none;
+}
+#main #show_anchor_info #map_anchor {
   position: absolute;
-  height: 92vh;
+  height: 90vh;
   width: 100%;
   top: 0;
-  background-color: #179dbe;
 }
 #main #berth_search {
   display: none;
   position: absolute;
-  height: 92vh;
+  height: 90vh;
   width: 100%;
   top: 0;
   background-color: #1259dd;
@@ -345,7 +504,7 @@ a {
 #main #show_berth_work {
   display: none;
   position: absolute;
-  height: 92vh;
+  height: 90vh;
   width: 100%;
   top: 0;
   background-color: #991fc9;
@@ -353,16 +512,8 @@ a {
 #main #work_effic {
   display: none;
   position: absolute;
-  height: 92vh;
+  height: 90vh;
   width: 100%;
   top: 0;
   background-color: #e00a2e;
-}
-/***************************Jquery后面加的***************************/
-/**********导航栏部分**********/
-.nav_border_bottom {
-  border-bottom: solid 0.075rem #e6da39;
-}
-.nav_li_bg {
-  background: #e07109;
 }
