@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧港航——基于多源数据的港口水域监管系统</title>
+    <link rel="shortcut icon" href="./data/imgs/logo.ico" />
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/flexible.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://api.map.baidu.com/api?ak=WEKSeRPHGGyNfOS4NLbc3cBD6f1YaqMU&services=true"></script>
+    <script src="http://mapv.baidu.com/build/mapv.min.js"></script>
+    <script src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
+</head>
+
+<body>
+    <!--                   导航栏模块     -->
+    <header>
+        <h1>基于多源数据的港口水域监管系统</h1>
+        <div class="showTime">当前时间：2020年3月17 0时54分14秒</div>
+        <div class="show_functions">
+            <ul class="menu">
+                <li class="list"><a href="#" id="fun_home">系统主页</a></li>
+                <li class="list"><a href="#" id="fun_path">航道管理</a>
+                </li>
+                <li class="list"><a href="#">拖船管理</a>
+                    <ul class="items">
+                        <li> <a href="#" id="fun_ship_search"> 拖船查询 </a></li>
+                        <li> <a href="#" id="fun_show_ship"> 信息展示 </a></li>
+                    </ul>
+                </li>
+                <li class="list"><a href="#">锚地管理</a>
+                    <ul class="items">
+                        <li> <a href="#" id="fun_isLeave"> 走锚判断 </a></li>
+                        <li> <a href="#" id="fun_show_anchor"> 信息展示 </a></li>
+                    </ul>
+                </li>
+                <li class="list"><a href="#">泊位管理</a>
+                    <ul class="items">
+                        <li> <a href="#" id="fun_berth_search"> 泊位查询 </a></li>
+                        <li> <a href="#" id="fun_show_work"> 作业展示 </a></li>
+                        <li> <a href="#" id="fun_show_effic"> 装卸效率 </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 主体内容本部分 -->
+    <div id="main">
+
+        <!-- 首页——系统主页部分 start-->
+        <div class="mainbox">
+            <div class="column">
+                <div class="show_infor_left">
+
+                </div>
+                <div class="home_box">
+                    <h2>航道监测</h2>
+                    <div class="home_infor">
+                        <video src="./data/video/1.mp4" autoplay loop muted></video>
+                    </div>
+                    <div class="home_box-footer"></div>
+                </div>
+                <div class="home_box">
+                    <h2>拖轮管理</h2>
+                    <div class="home_infor home_ship"></div>
+                    <div class="home_box-footer"></div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="no">
+                    <div class="no-hd">
+                        <ul>
+                            <li>0081</li>
+                            <li>0063</li>
+                        </ul>
+                    </div>
+                    <div class="no-bd">
+                        <ul>
+                            <li>进港船舶数量</li>
+                            <li>出港船舶数量</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="map_home">
+                </div>
+            </div>
+            <div class="column">
+                <div class="home_box">
+                    <h2>锚地管理</h2>
+                    <div class="home_infor home_anchor"></div>
+                    <div class="home_box-footer"></div>
+                </div>
+                <div class="home_box">
+                    <h2>泊位作业</h2>
+                    <div class="home_infor home_work"></div>
+                    <div class="home_box-footer"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 首页——系统主页部分 end-->
+
+
+
+        <!-- 航道监测 start-->
+        <div id="show_path">
+            <div id="path_map"></div>
+            <div class="path_infor">
+                <li class="path_infor_top">
+                    <video src="./data/video/1.mp4" autoplay loop muted></video>
+                </li>
+                <li>
+                    <div class="path_infor_bottom">
+                        <h1>船舶信息</h1>
+                        <table>
+                            <tr>
+                                <th>船名:</th>
+                                <td>安通27</td>
+                                <th>MMSI:</th>
+                                <td>413451530</td>
+                            </tr>
+                            <tr>
+                                <th>IMO:</th>
+                                <td>1400704</td>
+                                <th>呼号:</th>
+                                <td>BKRT6</td>
+                            </tr>
+                            <tr>
+                                <th>船长:</th>
+                                <td>96米</td>
+                                <th>船宽:</th>
+                                <td>15米</td>
+                            </tr>
+                            <tr>
+                                <th>经度:</th>
+                                <td>122.987E</td>
+                                <th>纬度:</th>
+                                <td>29.271N</td>
+                            </tr>
+                            <tr>
+                                <th>吃水:</th>
+                                <td>5米</td>
+                                <th>航速:</th>
+                                <td>9.3节</td>
+                            </tr>
+                            <tr>
+                                <th>船首向:</th>
+                                <td>49.0度</td>
+                                <th>航迹向:</th>
+                                <td>50.4度</td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+            </div>
+        </div>
+        <!-- 航道监测 end-->
+
+
+
+        <!-- 拖船查询 start-->
+        <div id="ship_search">
+            <!-- 港口地图 -->
+            <div id="port"></div>
+            <!-- 拖船的查询的信息 -->
+            <div class="ship_search_info">
+                <div class="searchkuang">
+                    <input type="search" name="" id="searchships" placeholder="输入拖船舶MMSI例:xxxxxxx">
+                    <button class="searchbtn">搜索</button>
+                </div>
+                <div class="ships">
+                    <li class="firstli"><span></span>IMO：<span class="IMO"></span></li>
+                    <li><span></span>船长：<span class="long"></span></li>
+                    <li><span></span>船宽：<span class="width"></span></li>
+                    <li><span></span>是否正在工作：<span class="iswork"></span></li>
+                    <li><span></span>已经工作时间：<span class="worked_time"></span></li>
+                    <li><span></span>预计还需工作时间：<span class="finish_time"></span></li>
+                </div>
+            </div>
+
+        </div>
+        <!-- 拖船查询 end-->
+
+
+
+        <!-- 拖船信息展示 start-->
+        <div id="show_ship_data">
+            <!-- 动态展示的图 -->
+            <div class="ship_data_left">
+                <div id="show_heatmap"></div>
+            </div>
+            <!-- 右侧的信息展示 -->
+            <div class="ship_data_right">
+                <li class="ship_data_right_top">展示现在拖船有多少是空闲的，有多少是工作的</li>
+                <li class="ship_data_right_bottom">推荐拖船</li>
+            </div>
+        </div>
+        <!-- 拖船信息展示 end-->
+
+
+
+        <!-- 走锚判断 start -->
+        <div id="isLeave">
+            <!-- 锚地地图 -->
+            <div id="anchor"></div>
+            <!-- 走锚信息展示 -->
+            <div class="show_isLeave "></div>
+        </div>
+        <!-- 走锚判断 end -->
+
+
+
+        <!-- 锚地信息展示 start -->
+        <div id="show_anchor_info">
+            <!-- 锚地地图展示 -->
+            <div id="map_anchor"></div>
+            <!-- 信息展示 -->
+            <div class="anchor_infor">
+                <li class="anchor_infor_top"></li>
+                <li class="anchor_infor_bottom">
+                    <h2>锚地信息</h2>
+                    <table>
+                        <tr>
+                            <th>锚地容量:</th>
+                            <td>11222</td>
+                        </tr>
+                        <tr>
+                            <th>锚地船舶总数量:</th>
+                            <td>1400704</td>
+                        </tr>
+                    </table>
+                    <h2>作业时间</h2>
+                    <div class="anchor_infor_average"></div>
+                </li>
+            </div>
+        </div>
+        <!-- 锚地信息展示 end -->
+
+        <!-- 泊位查询 start -->
+        <div id="berth_search">
+            <!-- 泊位地图 -->
+            <div id="berth"></div>
+            <!-- 泊位查询的信息 -->
+            <div class="berth_search_info">
+                <div class="berthchoice">
+                    <span></span> 泊位：
+                    <button onclick="chooseOne()" class="berthbtn">1</button>
+                    <button onclick="chooseTwo()" class="berthbtn">2</button>
+                    <button onclick="chooseThree()" class="berthbtn">3</button>
+                    <button onclick="chooseFour()" class="berthbtn">4</button>
+                    <button onclick="chooseFive()" class="berthbtn">5</button>
+                    <button onclick="chooseSix()" class="berthbtn">6</button>
+                </div>
+                <div class="berths">
+                    <li><span></span>状态：<span class="state"></span></li>
+                    <li><span></span>已经工作时间：<span class="worked_time"></span></li>
+                    <li><span></span>预计还需工作时间：<span class="finish_time"></span></li>
+                </div>
+            </div>
+        </div>
+        <!-- 泊位查询 end -->
+
+
+
+        <!-- 作业展示 start -->
+        <div id="show_berth_work">
+            <!-- 泊位地图展示 -->
+            <div id="map_berth"></div>
+            <!-- 作业信息展示 -->
+            <div class="berth_infor">
+                <li id="berth_infor_top"></li>
+                <li id="berth_infor_bottom"></li>
+            </div>
+        </div>
+        <!-- 作业展示 end -->
+
+
+
+        <!-- 装卸效率 start -->
+        <div id="work_effic">
+            <!-- 泊位地图展示 -->
+            <div id="map_berth_work"></div>
+            <!-- 作业信息展示 -->
+            <div class="work_infor">
+                <li id="work_infor_top"></li>
+                <li id="work_infor_bottom"></li>
+            </div>
+        </div>
+        <!-- 装卸效率 end -->
+    </div>
+</body>
+<script src="./js/show_info.js"></script>
+<script src="./js/map.js"></script>
+<script src="./js/main.js"></script>
+
+</html>

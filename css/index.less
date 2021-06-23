@@ -1,0 +1,752 @@
+*{
+    margin: 0;
+    padding: 0;
+    //c3盒子模型
+    box-sizing: border-box;
+    font-family: '楷体';
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #f6f6f6;
+}
+@font-face {
+    font-family: electronicFont;
+    src: url(../font/DS-DIGIT.TTF);
+  }
+//去除百度地图发logo
+.BMap_cpyCtrl {
+    display: none;
+}
+ 
+.anchorBL {
+    display: none;
+}
+body{
+    background-image: url(../data/imgs/bg.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    line-height: 1.15;
+    background-size: cover;
+}
+
+
+
+
+/***************************导航栏部分***************************/
+header {
+  position: relative;
+  height: 10vh;
+  background: url(../data/imgs/header.png) no-repeat top center;
+  background-size: 100% 100%;
+  h1 {
+    font-size: 0.475rem;
+    color: #fff;
+    text-align: center;
+    line-height: 10vh;
+  }
+  .showTime {
+    position: absolute;
+    top: 0;
+    right: 0.375rem;
+    line-height: 0.9375rem;
+    font-size: 0.25rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .show_functions{
+    position: absolute;
+    top: .2rem;
+    left: 0;
+    width: .625rem;
+    height: .625rem;
+    background: url(../data/imgs/功能.png);
+    background-size: 100% 100%;
+    z-index: 5000;
+    .menu{
+      display: none;
+      position: absolute;
+      top: 0.625rem;
+      background-color: #fff;
+      width: 2.5rem;
+      // margin: 20px auto;
+      font-family: 'Century Gothic'; 
+      box-shadow: 0px 0px 25px #00000070;
+      clear: both;
+      // display: table;
+      .list{
+         font-size: 14px;
+         border-bottom:1px solid #324252;
+         position: relative;
+         width: 100%;
+         height: 50px;
+         vertical-align: sub;
+         background: #3e5165;
+         clear: both;
+         font-size: .3125rem;
+         &:after{
+            content: "\f107";
+            font-family:FontAwesome;
+            position: absolute;
+            right: 17px;
+            top: 17px;
+            padding: 0px 5px;
+            color:#fff;
+         }
+         a{
+            text-decoration: none;
+            color: #fff;
+            padding: 17px 0px 17px 5px;
+            display: block;
+            height: 100%;
+            &:hover{
+               background-color: #324252;
+               transition:  300ms all;
+               color: #09fbd2;
+            }
+         }
+         .items{
+            height: 0px;
+            overflow: hidden;
+            a{
+               padding:17px;
+               &:hover{
+                  background-color: #3f5d79;
+                  color:#fff;
+                  transition:  300ms all;
+   
+               }
+            }
+         }
+         &:last-child{
+            border-bottom:none;
+         }
+      }
+      .active{
+         &:after{
+            content: "\f106";
+            font-family:FontAwesome;
+            position: absolute;
+            right: 17px;
+            top: 17px;
+            padding: 0px 5px;
+            color:#fff;
+         }
+         >.items{
+            display: block;
+            background: #23313f;
+            padding: 0px;
+            height: auto;
+            color:#fff;
+            transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            transition: all 200ms;
+            clear: both;
+            float: left;
+            width: 100%;
+            li{
+               padding:0px;
+               border-bottom:1px solid #324252;
+               list-style: none;
+            }
+            li:last-child{
+               border-color:transparent;
+               padding-bottom: 0px;
+            }
+            .active{
+               > .items{
+                  background-color: #2f4b67;
+               }
+            }
+         }
+         > a{
+            color:#46efa4;
+            text-transform: uppercase;
+            font-weight: bold;
+   
+         }
+         .list{
+            background: #697d92;
+            a{
+               padding: 17px 0px 17px 45px;
+            }
+         }
+    }
+}
+  }
+}
+
+
+
+/***************************主体部分***************************/
+#main{
+    height: 90vh;
+    width: 100%;
+    position: relative;
+    /***************************系统主页***************************/
+    .mainbox {
+      
+        height: 90vh;
+        padding: 0.125rem 0.125rem 0;
+        display: flex;
+        .column {
+          flex: 3;
+          &:nth-child(2) {
+            flex: 5;
+            margin: 0 0.25rem 0.25rem;
+            // overflow: hidden;
+          }
+        }
+        .home_box {
+          position: relative;
+          height: 4rem;
+          border: 1px solid rgba(25, 186, 139, 0.17);
+          background: rgba(255, 255, 255, .04) url(../data/imgs/line\(1\).png);
+          // padding: 0 0.1875rem 0.5rem;
+          margin-bottom: 1.85rem;
+          &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            width: .125rem;
+            height: .125rem;
+            border-top: 2px solid #02a6b5;
+            border-left: 2px solid #02a6b5;
+          }
+          &::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid #02a6b5;
+            border-right: 2px solid #02a6b5;
+          }
+          .home_box-footer {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            &::before {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              content: "";
+              width: .125rem;
+              height: .125rem;
+              border-bottom: .025rem solid #02a6b5;
+              border-left: .025rem solid #02a6b5;
+            }
+            &::after {
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              content: "";
+              width: .125rem;
+              height: .125rem;
+              border-bottom: .025rem solid #02a6b5;
+              border-right: .025rem solid #02a6b5;
+            }
+          }
+        
+          h2 {
+            height: 0.6rem;
+            line-height: 0.6rem;
+            text-align: center;
+            color: #fff;
+            font-size: .375rem;
+            font-weight: 400;
+          }
+          .home_infor{
+            height: 3rem;
+            width: 6.45rem;
+            video{
+              height: 3rem;
+              width: 6.45rem;
+            }
+          }
+        }
+        .no {
+          background: rgba(101, 132, 226, 0.1);
+          padding: 0.1875rem;
+          .no-hd {
+            position: relative;
+            border: .0125rem solid rgba(25, 186, 139, 0.17);
+            &::before {
+              content: "";
+              position: absolute;
+              width: .375rem;
+              height: .125rem;
+              border-top: .025rem solid #02a6b5;
+              border-left: .025rem solid #02a6b5;
+              top: 0;
+              left: 0;
+            }
+            &::after {
+              content: "";
+              position: absolute;
+              width: .375rem;
+              height: .125rem;
+              border-bottom: .025rem solid #02a6b5;
+              border-right: .025rem solid #02a6b5;
+              right: 0;
+              bottom: 0;
+            }
+            ul {
+              display: flex;
+              li {
+                position: relative;
+                flex: 1;
+                text-align: center;
+                height: 1rem;
+                line-height: 1rem;
+                font-size: 0.875rem;
+                color: #ffeb7b;
+                padding: 0.05rem 0;
+                font-family: electronicFont;
+                font-weight: bold;
+                &:first-child::after {
+                  content: "";
+                  position: absolute;
+                  height: 50%;
+                  width: 1px;
+                  background: rgba(255, 255, 255, 0.2);
+                  right: 0;
+                  top: 25%;
+                }
+              }
+            }
+          }
+          .no-bd ul {
+            display: flex;
+            li {
+              flex: 1;
+              height: 0.5rem;
+              line-height: 0.5rem;
+              text-align: center;
+              font-size: .3325rem;
+              color: rgba(255, 255, 255, 0.7);
+              font-weight: 800;
+              padding-top: 0.125rem;
+            }
+          }
+        }
+        #map_home {
+          position: relative;
+          background: rgba(255, 255, 255, 0.04) url(../data/imgs/line\(1\).png);
+          height: 7.9375rem;
+          border: 1px solid rgba(25, 186, 139, 0.17);
+        }  
+      }
+
+
+ /***************************航道监测***************************/
+      #show_path{
+        display: none;
+        #path_map{
+            position: absolute;
+            height: 86vh;
+            width: 69vw;
+            background-color: #7cd6d6;
+            top: 2vh;
+            bottom: 2vh;
+            left: 1vw;
+            border-radius: .25rem;
+        }
+        .path_infor{
+            position: absolute;
+            height: 90vh;
+            width: 28vw;
+            top: 0;
+            right: 1vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+            flex-wrap: wrap;
+            li{
+              flex: 1;
+              background: rgba(255, 255, 255, 0.7);
+              width: 28vw;
+              height: 40vh;
+              margin: 4vh 0;
+              border-radius: .1975rem;
+              video{
+                height: 40vh;
+                width: 28vw;
+                object-fit:fill;
+                border-radius: .1975rem;
+              }
+            }
+            .path_infor_bottom{
+              tr{
+                height:.5rem;
+                th{
+                    font-size: .3rem;
+                }
+                td{
+                    width:1.875rem;
+                    color: #6d6c6c;
+                    font-style: italic;
+                    font-size: .27rem;
+                }
+            }
+            }
+        }
+    }
+
+
+
+    /***************************拖船查询部分***************************/
+    #ship_search{
+        display: none;
+        // 地图
+        #port{
+            position: absolute;
+            height: 90vh;
+            width: 100%;
+            top: 0;
+        }
+        // 拖船查询信息展示
+        .ship_search_info {
+            position: absolute;
+            width: 5.1rem;
+            height: 3.875rem;
+            background:rgba(180,183,200, 0.9);
+            top: 0;
+            right: 0;
+            border-bottom-left-radius: 5%;
+            .searchkuang {
+                position: absolute;
+                margin-top: .0625rem;
+                left: 50%;
+                transform: translate(-50%);
+                width: 3.8rem;
+                height: .4625rem;
+                border: .025rem solid #f85524;
+                input {
+                    float: left;
+                    width: 3rem;
+                    height: 100%;
+                    padding-left: 10px;
+                    border: none;
+                    font-size: .175rem;
+                }
+                button {
+                    float: left;
+                    width: 0.75rem;
+                    height: 100%;
+                    font-size: .2rem;
+                    font-weight: 800;
+                    background-color: #f85524;
+                    color: #fff;
+                }
+            }
+    
+            .ships {
+                position: absolute;
+                top: .5rem;
+    
+                li {
+                    height: .5rem;
+                    width: 5.1rem;
+                     color: #140b0b;
+                    font-size: .3rem;
+                    margin-bottom: 3px;
+                   // border-bottom: solid .0125rem black;
+                    line-height: .625rem;
+                    // text-align: center;
+                    font-weight: 700;
+                    
+                    span {
+                        padding-left: .8rem;
+                        color: #4b4a4a;
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+    }
+
+
+     /***************************拖船信息部分***************************/
+     #show_ship_data{
+        display: none;
+        .ship_data_left{
+            position: absolute;
+            height: 90vh;
+            width: 52vw;
+            top: 0;
+            // background-color: rgb(32, 59, 94);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            #show_heatmap{
+                flex: 1;
+                height: 86vh;
+                width: 51vw;
+                position: absolute;
+                left: 1vw;
+                background-color: #fff;
+                border-radius: .1975rem;
+            }
+
+        }
+        .ship_data_right{
+            position: absolute;
+            height: 90vh;
+            width: 48vw;
+            top: 0;
+            right: 0;
+            // background-color: rgb(32, 59, 94);
+            display: flex;
+            flex-flow: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            li{
+                flex: 2;
+                background:rgba(180,183,200, 0.9);
+                width: 45vw;
+                height: 55vh;
+                margin-bottom: 2vh;
+                margin-top: 2vh;
+                border-radius: .1975rem;
+            }
+            .ship_data_right_bottom{
+                margin-top: 0vh;
+            }
+        }
+
+     }
+
+
+
+    /***************************走锚判断***************************/
+     #isLeave{
+        display: none;
+        #anchor{
+            position: absolute;
+            height: 90vh;
+            width: 100%;
+            top: 0;
+        }
+        .show_isLeave{
+            position: absolute;
+            width: 5.1rem;
+            height: 3.875rem;
+            background:rgba(180,183,200, 0.9);
+            top: 0;
+            right: 0;
+            border-bottom-left-radius: 5%;
+        }
+    }    
+
+
+
+    /***************************锚地信息展示***************************/
+    #show_anchor_info{
+        display: none;
+        #map_anchor{
+          position: absolute;
+          height: 86vh;
+          width: 69vw;
+          background-color: #7cd6d6;
+          top: 2vh;
+          bottom: 2vh;
+          left: 1vw;
+          border-radius: .25rem;
+      }
+      .anchor_infor{
+          position: absolute;
+          height: 90vh;
+          width: 28vw;
+          top: 0;
+          right: 1vw;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-flow: column;
+          flex-wrap: wrap;
+          li{
+            flex: 1;
+            background: rgba(255, 255, 255, 0.7);
+            width: 28vw;
+            height: 40vh;
+            margin: 4vh 0;
+            border-radius: .1975rem;
+            tr{
+            td{
+                color: #6d6c6c;
+                font-style: italic;
+            }
+            }
+            .anchor_infor_average{
+              height: 21vh;
+              width: 28vw;
+              // background: #000;
+            }
+          }
+    }
+  }
+
+
+
+    /***************************泊位查询**************************/
+    #berth_search {
+      display: none;
+
+      //地图
+      #berth {
+          position: absolute;
+          height: 90vh;
+          width: 100%;
+          top: 0;
+      }
+
+      // 泊位查询信息展示
+      .berth_search_info {
+          position: absolute;
+          width: 5.1rem;
+          height: 2.5rem;
+          background: rgba(248, 247, 247, 0.9);
+          top: 0;
+          right: 0;
+          border-bottom-left-radius: 5%;
+
+          .berthchoice {
+              position: absolute;
+              margin-top: .0625rem;
+              margin-bottom: 3px;
+              width: 5.1rem;
+              height: .5rem;
+              color: #140b0b;
+              font-size: .3rem;
+              font-weight: 700;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              span {
+                  padding-left: .8rem;
+                  color: #4b4a4a;
+                  font-style: italic;
+              }
+
+              .berthbtn {
+                  flex: 1;
+                  height: .3rem;
+                  width: .3rem;
+                  margin: 0 0.1rem;
+                  border-radius: 50%;
+                  outline: none;
+                  border: 0;
+                  background-color: rgb(150, 150, 150);
+              }
+
+              .berthbtn:hover {
+                  background-color: rgb(224, 113, 9);
+              }
+          }
+
+          .berths {
+              position: absolute;
+              top: .5rem;
+
+              li {
+                  height: .5rem;
+                  width: 5.1rem;
+                  color: #140b0b;
+                  font-size: .3rem;
+                  margin-bottom: 3px;
+                  // border-bottom: solid .0125rem black;
+                  line-height: .625rem;
+                  // text-align: center;
+                  font-weight: 700;
+
+                  span {
+                      padding-left: .8rem;
+                      color: #4b4a4a;
+                      font-style: italic;
+                  }
+              }
+          }
+      }
+  }
+
+
+
+    /***************************作业展示**************************/
+    #show_berth_work{
+      display: none;
+      #map_berth{
+        position: absolute;
+        height: 86vh;
+        width: 69vw;
+        background-color: #7cd6d6;
+        top: 2vh;
+        bottom: 2vh;
+        left: 1vw;
+        border-radius: .25rem;
+    }
+    .berth_infor{
+        position: absolute;
+        height: 90vh;
+        width: 28vw;
+        top: 0;
+        right: 1vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        flex-wrap: wrap;
+        li{
+          flex: 1;
+          background: rgba(255, 255, 255, 0.7);
+          width: 28vw;
+          height: 40vh;
+          margin: 2vh 0;
+          border-radius: .1975rem;
+        }
+  }
+}
+
+
+
+    /***************************装卸效率**************************/
+    #work_effic{
+      display: none;
+      #map_berth_work{
+        position: absolute;
+        height: 86vh;
+        width: 69vw;
+        background-color: #7cd6d6;
+        top: 2vh;
+        bottom: 2vh;
+        left: 1vw;
+        border-radius: .25rem;
+    }
+    .work_infor{
+        position: absolute;
+        height: 90vh;
+        width: 28vw;
+        top: 0;
+        right: 1vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        flex-wrap: wrap;
+        li{
+          flex: 1;
+          background: rgba(255, 255, 255, 0.7);
+          width: 28vw;
+          height: 40vh;
+          margin: 2vh 0;
+          border-radius: .1975rem;
+        }
+  }
+    }
+}
